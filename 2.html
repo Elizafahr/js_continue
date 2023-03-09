@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tr</title>
+</head>
+<body> <!--ЗАДАЧУ НУЖНО ПЕРЕДЕЛАТЬ!!!!! ИСКЛЮЧЕНИЕ РАБОТАЕТ УЖАСНО-->
+    <P> Даны три стороны треугольника. Написать программу, определяющую, является ли он 
+        остроугольным, тупоугольным, прямоугольным, равнобедренным или равносторонним. 
+        (Треугольник может относиться к нескольким классам одновременно.) 
+    </P>  
+     <p>Введите 1 сторону <input type="text" id = "num1"></p>   
+     <p>Введите 2 сторону <input type="text" id = "num2"></p>   
+     <p>Введите 3 сторону <input type="text" id = "num3"></p>   
+
+        <input type="button" onClick="count();" value="Вывести">
+        <br>
+        <p>Тип треугольника-  <input type="text" id = "res"></p>    
+
+        <script>
+           /* function count(){
+                var aa = document.getElementById('num1').value;
+                var bb = document.getElementById('num2').value;
+                var cc = document.getElementById('num3').value;
+                var c = parseInt(cc);
+                var b = parseInt(bb);
+                var a = parseInt(aa);
+                if ((a + b > c) && (b + c > a) && (a + c > b))
+                {
+                    if(a==b==c){
+                        if(Math.pow(a,2)<Math.pow(b,2)+Math.pow(c,2)&&Math.pow(b,2)<Math.pow(a,2)+Math.pow(c,2)&&Math.pow(c,2)<Math.pow(b,2)+Math.pow(a,2)){
+                            document.getElementById('res').value="Остроугольный";
+                        }
+                    }
+                    else if(c >= a&& c >= b) {
+                        if(Math.pow(c,2)==Math.pow(a,2)+Math.pow(b,2)){
+                             document.getElementById('res').value="Прямоугольный";
+                        }
+                        if(Math.pow(c,2)<Math.pow(a,2)+Math.pow(b,2)){
+                             document.getElementById('res').value="Остроугольный";
+                        }
+                        if(Math.pow(c,2)>Math.pow(a,2)+Math.pow(b,2)){
+                             document.getElementById('res').value="Тупоугольный";
+                        }
+                    }
+                    else if(a >= b&& a >= c) {
+                        if(Math.pow(a,2)==Math.pow(c,2)+Math.pow(b,2)){
+                             document.getElementById('res').value="Прямоугольный";
+                        }
+                        if(Math.pow(a,2)<Math.pow(c,2)+Math.pow(b,2)){
+                             document.getElementById('res').value="Остроугольный";
+                        }
+                        if(Math.pow(a,2)>Math.pow(c,2)+Math.pow(b,2)){
+                             document.getElementById('res').value="Тупоугольный";
+                        }
+                    }
+                    else if(b >= a && b >= c) {
+                        if(Math.pow(b,2)==Math.pow(c,2)+Math.pow(a,2)){
+                             document.getElementById('res').value="Прямоугольный";
+                        }
+                        if(Math.pow(b,2)<Math.pow(c,2)+Math.pow(a,2)){
+                             document.getElementById('res').value="Остроугольный";
+                        }
+                        if(Math.pow(b,2)>Math.pow(c,2)+Math.pow(a,2)){
+                             document.getElementById('res').value="Тупоугольный";
+                        }
+                    }
+                    else if (a == b >= c){
+                        if (Math.pow(a,2) == Math.pow(c,2) + Math.pow(b,2) && Math.pow(b,2) == Math.pow(a,2)+ Math.pow(c,2)){
+                            document.getElementById('res').value="Прямоугольный";
+                        }
+                        else if (Math.pow(a,2) < Math.pow(c,2) + Math.pow(b,2) && Math.pow(b,2) < Math.pow(a,2)+ Math.pow(c,2)){
+                            document.getElementById('res').value="Остроугольный";
+                        }
+                        else if (Math.pow(a,2) > Math.pow(c,2) + Math.pow(b,2) && Math.pow(b,2) >Math.pow(a,2)+ Math.pow(c,2)){
+                            document.getElementById('res').value="Тупоугольный";
+                        }
+                    }
+                    else if (a == c >= b){
+                        if (Math.pow(a,2) == Math.pow(c,2) + Math.pow(b,2) && Math.pow(c,2) == Math.pow(a,2)+ Math.pow(b,2)){
+                            document.getElementById('res').value="Прямоугольный";
+                        }
+                        else if (Math.pow(a,2) < Math.pow(c,2) + Math.pow(b,2) && Math.pow(c,2) < Math.pow(a,2)+ Math.pow(b,2)){
+                            document.getElementById('res').value="Остроугольный";
+                        }
+                        else if (Math.pow(a,2) > Math.pow(c,2) + Math.pow(b,2) && Math.pow(c,2) > Math.pow(a,2)+ Math.pow(b,2)){
+                            document.getElementById('res').value="Тупоугольный";
+                        }
+                    }
+                    else if (b == c >= a){
+                        if (Math.pow(b,2) == Math.pow(a,2) + Math.pow(c,2) && Math.pow(c,2) == Math.pow(a,2)+ Math.pow(b,2)){
+                            document.getElementById('res').value="Прямоугольный";
+                        }
+                        else if (Math.pow(b,2) < Math.pow(c,2) + Math.pow(a,2) && Math.pow(c,2) < Math.pow(a,2)+ Math.pow(b,2)){
+                            document.getElementById('res').value="Остроугольный";
+                        }
+                        else if (Math.pow(b,2) > Math.pow(c,2) + Math.pow(c,2) && Math.pow(c,2) > Math.pow(a,2)+ Math.pow(b,2)){
+                            document.getElementById('res').value="Тупоугольный";
+                        }
+                    }
+                else if (a!=b||b!=c){
+                    document.getElementById('res').value="нет";
+                }
+                else {
+                    document.getElementById('res').value="нет";
+                }
+            }
+            
+            }*/
+            </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Дан объём информации I в байтах. Написать программу, выражающую его через байты,
+         килобайты и мегабайты. Например, 1234567 байт = 1 Мбайт 181 Кбайт 647 байт</p>
+    <p>Введите объём информации I (в байтах) <input  type="text" id = "num"></p>   
+    <input type="button"  onClick="count();" value="Вывести">
+    <br>
+    <p id="res"></p>    
+
+    <script>
+        function count(){
+            var i = document.getElementById('num').value;
+            var l=parseInt(i);
+            var bit =l*8;
+            var kb =l/1024;
+            var gb=kb/1024;
+            var tb=gb/1024;
+            if(l<1000){ 
+                document.getElementById('res').innerHTML= l + " байт = " + bit + " бит = " + kb.toFixed(6) + " кб = " + gb.toFixed(6) + " гб = "+ tb.toFixed(9) + " тб";
+            }
+             if(l>=1000&&l<=10000){
+                document.getElementById('res').innerHTML= l + " байт = " + bit + " бит = " + kb.toFixed(5) + " кб = " + gb.toFixed(5) + " гб = "+ tb.toFixed(7) + " тб";
+            }
+            if(l>10000){
+                document.getElementById('res').innerHTML= l + " байт = " + bit + " бит = " + kb.toFixed(3) + " кб = " + gb.toFixed(3) + " гб = "+ tb.toFixed(5) + " тб";
+            }
+         }
+        </script>
+        </body>
+</html>

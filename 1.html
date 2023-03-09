@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calendar</title>
+</head>
+<body>
+    <P> В старояпонском календаре был принят 12-летний цикл. 
+        Годы внутри цикла носили названия животных: крысы, коровы, тигра, зайца, 
+        дракона, змеи, лошади, овцы, обезьяны, курицы, собаки и свиньи. Написать 
+        программу, которая по введённому номеру года, определяет его название в 
+        старояпонском календаре. Если известно, что 1984 год был годом крысы, началом цикла.
+    </P>  
+     <p>Введите год <input type="text" id = "num"></p>   
+        <input type="button" onClick="count();" value="Вывести">
+        <br>
+        <p>Животное этого года -  <input type="text" id = "res"></p>    
+
+        <script>
+            function count(){
+                const a=1960;
+                var year = document.getElementById('num').value;
+               
+                if (year>a){d=year-a;}
+                else{d=a-year;}
+              switch(d%12){
+                case 0: document.getElementById('res').value="крыса";break;
+                case 1: document.getElementById('res').value="корова";break;
+                case 2: document.getElementById('res').value="тигр";break;
+                case 3: document.getElementById('res').value="заяц"; break;
+                case 4: document.getElementById('res').value="дракон";break;
+                case 5: document.getElementById('res').value="змея"; break;
+                case 6: document.getElementById('res').value="лошадь"; break;
+                case 7: document.getElementById('res').value="овца"; break;
+                case 8: document.getElementById('res').value="обезьяна"; break;
+                case 9: document.getElementById('res').value="курица"; break;
+                case 10:  document.getElementById('res').value="собака ";break;
+                case 11:  document.getElementById('res').value="свинья";break;
+              }
+            }
+            </script>
+</body>
+</html>

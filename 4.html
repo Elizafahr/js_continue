@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>summ</title>
+</head>
+<body>
+    <p> Дано целое число k (1 ⩽ k ⩽ 365). Написать программу, определяющую день недели 
+        k-го дня года, если 1 января — понедельник. </p>
+         <p>Введите день (число k(1 ⩽ k ⩽ 365)) <input  type="text" id = "num"></p>   
+        <input type="button"  data-bs-toggle="tooltip" data-bs-html="true" title="Вычислить сумму в евро" onClick="count();" value="Вывести">
+        <br>
+        <p><input data-bs-toggle="tooltip" data-bs-html="true" title="Полученный результат" type="text" id = "res"></p>    
+
+        <script>
+            function count(){
+                var k = document.getElementById('num').value;
+                if(k>=1&&k<366){
+                    switch (k%7){
+                        case 1:
+                        document.getElementById('res').value="Понедельник";
+                        break;     
+                        case 2:
+                        document.getElementById('res').value="Вторник";
+                        break;
+                        case 3:
+                        document.getElementById('res').value="Среда";
+                        break;
+                        case 4: 
+                        document.getElementById('res').value="Четверг"; 
+                        break;     
+                        case 5:
+                        document.getElementById('res').value="Пятница";
+                        break;
+                        case 6:
+                        document.getElementById('res').value="Суббота";
+                        break;
+                        case 0:
+                        document.getElementById('res').value="Воскресенье";
+                        break;
+                        default:
+                        document.getElementById('res').value="ups";
+                            break;
+                        } 
+                }
+                else{
+                    document.getElementById('res').value="Введено неверное число";
+                }
+            }
+          
+            </script>
+</body>
+</html>

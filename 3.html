@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>summ</title>
+</head>
+<body>
+    <p>Написать программу, переводящую сумму в рублях в евро для указанного обменного курса. 
+        Ответ вывести в виде: «R руб. = E евро.». Вместо буквенных обозначений должны стоять 
+        конкретные числа с точностью до 2-го знака после запятой. Перед запросом ввода с
+         клавиатуры выводить подсказку.</p>
+         <p>Введите сумму в рублях <input data-bs-toggle="tooltip" data-bs-html="true" title="Вам необходмо ввести сумму в рублях" type="text" id = "num"></p>   
+         <p>Введите курс euro <input data-bs-toggle="tooltip" data-bs-html="true" title="Вам необходмо ввести курс евро на текущую дату" type="text" id = "num1"></p>   
+        <input type="button"  data-bs-toggle="tooltip" data-bs-html="true" title="Вычислить сумму в евро" onClick="count();" value="Вывести">
+        <br>
+        <p><input data-bs-toggle="tooltip" data-bs-html="true" title="Полученный результат" type="text" id = "res"></p>    
+
+        <script>
+            function count(){
+                var summ = document.getElementById('num').value;
+                var euro = document.getElementById('num1').value;
+                document.getElementById('res').value=(parseInt(summ)/parseInt(euro)).toFixed(2);
+            }
+          
+            </script>
+</body>
+</html>
